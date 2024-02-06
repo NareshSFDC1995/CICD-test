@@ -40,6 +40,6 @@ jobs:
            
             # Deploy source to Acc org
             - name: 'Push source to Acc org'
-              run: sfdx force:source:deploy -u naresh.gaddam01@wise-otter-7uxyjv.com -p force-app/main/default -c
+              run: sfdx force:source:deploy -u naresh.gaddam01@wise-otter-7uxyjv.com -p force-app/main/default
 
    
