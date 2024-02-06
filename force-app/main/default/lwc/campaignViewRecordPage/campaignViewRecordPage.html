@@ -1,0 +1,263 @@
+<template>
+    <lightning-record-view-form object-api-name="Campaign" title="Campaign Record Page" record-id={recordId} mode="view" density="comfy">
+        <div class="slds-m-around-small">
+            <lightning-layout multiple-rows="true">
+                <lightning-layout-item padding="horizontal-small" size="6">
+
+                    <lightning-output-field field-name="OwnerId"
+                        style="width:100%;margin-bottom:auto;padding-right: 10px;border-bottom-color: #FEE;"
+                        class="slds-has-divider--bottom slds-form-element_stacked">
+                        <lightning-button-icon data-fieldapiname="OwnerId" icon-name="utility:edit"
+                        alternative-text="Edit" title="Edit" variant="bare" size="medium" type="button"
+                        onclick={editRecord} style="opacity:.2;position: absolute;"></lightning-button-icon>
+                    </lightning-output-field>
+                    </lightning-layout-item>
+
+                    <!--
+                    <lightning-layout-item padding="horizontal-small" size="6">
+                    <lightning-output-field field-name="NumberOfLeads"
+                        style="width:100%;margin-bottom:auto;padding-right: 10px;border-bottom-color: #FEE;"
+                        class="slds-has-divider--bottom slds-form-element_stacked">
+                        <lightning-button-icon data-fieldapiname="NumberOfLeads" icon-name="utility:edit"
+                        alternative-text="Edit" title="Edit" variant="bare" size="medium" type="button"
+                        onclick={editRecord} style="opacity:.2;position: absolute;"></lightning-button-icon>
+                    </lightning-output-field>
+                    </lightning-layout-item>-->
+
+                    <lightning-layout-item></lightning-layout-item>
+
+                    <lightning-layout-item padding="horizontal-small" size="6">
+                    <lightning-output-field field-name="Name"
+                        style="width:100%;margin-bottom:auto;padding-right: 10px;border-bottom-color: #FEE;"
+                        class="slds-has-divider--bottom slds-form-element_stacked">
+                        <lightning-button-icon data-fieldapiname="Name" icon-name="utility:edit"
+                        alternative-text="Edit" title="Edit" variant="bare" size="medium" type="button"
+                        onclick={editRecord} style="opacity:.2;position: absolute;"></lightning-button-icon>
+                    </lightning-output-field>
+                    </lightning-layout-item>
+
+                    <lightning-layout-item padding="horizontal-small" size="6">
+                    <lightning-output-field field-name="NumberOfConvertedLeads"
+                        style="width:100%;margin-bottom:auto;padding-right: 10px;border-bottom-color: #FEE;"
+                        class="slds-has-divider--bottom slds-form-element_stacked">
+                        <lightning-button-icon data-fieldapiname="NumberOfConvertedLeads" icon-name="utility:edit"
+                        alternative-text="Edit" title="Edit" variant="bare" size="medium" type="button"
+                        onclick={editRecord} style="opacity:.2;position: absolute;"></lightning-button-icon>
+                    </lightning-output-field>
+                    </lightning-layout-item>
+                    
+                    <lightning-layout-item padding="horizontal-small" size="6">
+                    <lightning-output-field field-name="IsActive"
+                        style="width:100%;margin-bottom:auto;padding-right: 10px;border-bottom-color: #FEE;"
+                        class="slds-has-divider--bottom slds-form-element_stacked">
+                        <lightning-button-icon data-fieldapiname="IsActive" icon-name="utility:edit"
+                        alternative-text="Edit" title="Edit" variant="bare" size="medium" type="button"
+                        onclick={editRecord} style="opacity:.2;position: absolute;"></lightning-button-icon>
+                    </lightning-output-field>
+                    </lightning-layout-item>
+
+                    <lightning-layout-item padding="horizontal-small" size="6">
+                    <lightning-output-field field-name="NumberOfContacts"
+                        style="width:100%;margin-bottom:auto;padding-right: 10px;border-bottom-color: #FEE;"
+                        class="slds-has-divider--bottom slds-form-element_stacked">
+                        <lightning-button-icon data-fieldapiname="NumberOfContacts" icon-name="utility:edit"
+                        alternative-text="Edit" title="Edit" variant="bare" size="medium" type="button"
+                        onclick={editRecord} style="opacity:.2;position: absolute;"></lightning-button-icon>
+                    </lightning-output-field>
+                    </lightning-layout-item>
+
+                    <lightning-layout-item padding="horizontal-small" size="6">
+                    <lightning-output-field field-name="Type"
+                        style="width:100%;margin-bottom:auto;padding-right: 10px;border-bottom-color: #FEE;"
+                        class="slds-has-divider--bottom slds-form-element_stacked">
+                        <lightning-button-icon data-fieldapiname="Type" icon-name="utility:edit"
+                        alternative-text="Edit" title="Edit" variant="bare" size="medium" type="button"
+                        onclick={editRecord} style="opacity:.2;position: absolute;"></lightning-button-icon>
+                    </lightning-output-field>
+                    </lightning-layout-item>
+
+                    <lightning-layout-item padding="horizontal-small" size="6">
+                    <lightning-output-field field-name="NumberOfResponses"
+                        style="width:100%;margin-bottom:auto;padding-right: 10px;border-bottom-color: #FEE;"
+                        class="slds-has-divider--bottom slds-form-element_stacked">
+                        <lightning-button-icon data-fieldapiname="NumberOfResponses" icon-name="utility:edit"
+                        alternative-text="Edit" title="Edit" variant="bare" size="medium" type="button"
+                        onclick={editRecord} style="opacity:.2;position: absolute;"></lightning-button-icon>
+                    </lightning-output-field>
+                    </lightning-layout-item>
+
+                    <lightning-layout-item padding="horizontal-small" size="6">
+                    <lightning-output-field field-name="Status"
+                        style="width:100%;margin-bottom:auto;padding-right: 10px;border-bottom-color: #FEE;"
+                        class="slds-has-divider--bottom slds-form-element_stacked">
+                        <lightning-button-icon data-fieldapiname="Status" icon-name="utility:edit"
+                        alternative-text="Edit" title="Edit" variant="bare" size="medium" type="button"
+                        onclick={editRecord} style="opacity:.2;position: absolute;"></lightning-button-icon>
+                    </lightning-output-field>
+                    </lightning-layout-item>
+
+                    <lightning-layout-item padding="horizontal-small" size="6">
+                    <lightning-output-field field-name="NumberOfOpportunities"
+                        style="width:100%;margin-bottom:auto;padding-right: 10px;border-bottom-color: #FEE;"
+                        class="slds-has-divider--bottom slds-form-element_stacked">
+                        <lightning-button-icon data-fieldapiname="NumberOfOpportunities" icon-name="utility:edit"
+                        alternative-text="Edit" title="Edit" variant="bare" size="medium" type="button"
+                        onclick={editRecord} style="opacity:.2;position: absolute;"></lightning-button-icon>
+                    </lightning-output-field>
+                    </lightning-layout-item>
+
+                    <lightning-layout-item padding="horizontal-small" size="6">
+                    <lightning-output-field field-name="StartDate"
+                        style="width:100%;margin-bottom:auto;padding-right: 10px;border-bottom-color: #FEE;"
+                        class="slds-has-divider--bottom slds-form-element_stacked">
+                        <lightning-button-icon data-fieldapiname="StartDate" icon-name="utility:edit"
+                        alternative-text="Edit" title="Edit" variant="bare" size="medium" type="button"
+                        onclick={editRecord} style="opacity:.2;position: absolute;"></lightning-button-icon>
+                    </lightning-output-field>
+                    </lightning-layout-item>
+
+                    <lightning-layout-item padding="horizontal-small" size="6">
+                    <lightning-output-field field-name="NumberOfWonOpportunities"
+                        style="width:100%;margin-bottom:auto;padding-right: 10px;border-bottom-color: #FEE;"
+                        class="slds-has-divider--bottom slds-form-element_stacked">
+                        <lightning-button-icon data-fieldapiname="NumberOfWonOpportunities" icon-name="utility:edit"
+                        alternative-text="Edit" title="Edit" variant="bare" size="medium" type="button"
+                        onclick={editRecord} style="opacity:.2;position: absolute;"></lightning-button-icon>
+                    </lightning-output-field>
+                    </lightning-layout-item>
+
+                    <lightning-layout-item padding="horizontal-small" size="6">
+                    <lightning-output-field field-name="EndDate"
+                        style="width:100%;margin-bottom:auto;padding-right: 10px;border-bottom-color: #FEE;"
+                        class="slds-has-divider--bottom slds-form-element_stacked">
+                        <lightning-button-icon data-fieldapiname="EndDate" icon-name="utility:edit"
+                        alternative-text="Edit" title="Edit" variant="bare" size="medium" type="button"
+                        onclick={editRecord} style="opacity:.2;position: absolute;"></lightning-button-icon>
+                    </lightning-output-field>
+                    </lightning-layout-item>
+
+                    <lightning-layout-item padding="horizontal-small" size="6">
+                    <lightning-output-field field-name="AmountAllOpportunities"
+                        style="width:100%;margin-bottom:auto;padding-right: 10px;border-bottom-color: #FEE;"
+                        class="slds-has-divider--bottom slds-form-element_stacked">
+                        <lightning-button-icon data-fieldapiname="AmountAllOpportunities" icon-name="utility:edit"
+                        alternative-text="Edit" title="Edit" variant="bare" size="medium" type="button"
+                        onclick={editRecord} style="opacity:.2;position: absolute;"></lightning-button-icon>
+                    </lightning-output-field>
+                    </lightning-layout-item>
+
+                    <lightning-layout-item padding="horizontal-small" size="6">
+                    <lightning-output-field field-name="ExpectedRevenue"
+                        style="width:100%;margin-bottom:auto;padding-right: 10px;border-bottom-color: #FEE;"
+                        class="slds-has-divider--bottom slds-form-element_stacked">
+                        <lightning-button-icon data-fieldapiname="ExpectedRevenue" icon-name="utility:edit"
+                        alternative-text="Edit" title="Edit" variant="bare" size="medium" type="button"
+                        onclick={editRecord} style="opacity:.2;position: absolute;"></lightning-button-icon>
+                    </lightning-output-field>
+                    </lightning-layout-item>
+
+                    <lightning-layout-item padding="horizontal-small" size="6">                    
+                    <lightning-output-field field-name="AmountWonOpportunities"
+                    style="width:100%;margin-bottom:auto;padding-right: 10px;border-bottom-color: #FEE;"
+                    class="slds-has-divider--bottom slds-form-element_stacked">
+                    <lightning-button-icon data-fieldapiname="AmountWonOpportunities" icon-name="utility:edit"
+                    alternative-text="Edit" title="Edit" variant="bare" size="medium" type="button"
+                    onclick={editRecord} style="opacity:.2;position: absolute;"></lightning-button-icon>
+                </lightning-output-field>
+                </lightning-layout-item>
+
+                <lightning-layout-item padding="horizontal-small" size="6">
+                <lightning-output-field field-name="BudgetedCost"
+                        style="width:100%;margin-bottom:auto;padding-right: 10px;border-bottom-color: #FEE;"
+                        class="slds-has-divider--bottom slds-form-element_stacked">
+                        <lightning-button-icon data-fieldapiname="BudgetedCost" icon-name="utility:edit"
+                        alternative-text="Edit" title="Edit" variant="bare" size="medium" type="button"
+                        onclick={editRecord} style="opacity:.2;position: absolute;"></lightning-button-icon>
+                </lightning-output-field>
+                </lightning-layout-item>
+
+                <lightning-layout-item padding="horizontal-small" size="6">
+                    <lightning-output-field field-name="ActualCost"
+                        style="width:100%;margin-bottom:auto;padding-right: 10px;border-bottom-color: #FEE;"
+                        class="slds-has-divider--bottom slds-form-element_stacked">
+                        <lightning-button-icon data-fieldapiname="ActualCost" icon-name="utility:edit"
+                        alternative-text="Edit" title="Edit" variant="bare" size="medium" type="button"
+                        onclick={editRecord} style="opacity:.2;position: absolute;"></lightning-button-icon>
+                    </lightning-output-field>
+                    </lightning-layout-item>
+
+                    <lightning-layout-item padding="horizontal-small" size="6"></lightning-layout-item>
+                    
+                    <lightning-layout-item padding="horizontal-small" size="6">
+                    <lightning-output-field field-name="ExpectedResponse"
+                        style="width:100%;margin-bottom:auto;padding-right: 10px;border-bottom-color: #FEE;"
+                        class="slds-has-divider--bottom slds-form-element_stacked">
+                        <lightning-button-icon data-fieldapiname="ExpectedResponse" icon-name="utility:edit"
+                        alternative-text="Edit" title="Edit" variant="bare" size="medium" type="button"
+                        onclick={editRecord} style="opacity:.2;position: absolute;"></lightning-button-icon>
+                    </lightning-output-field>
+                    </lightning-layout-item>
+
+                    <lightning-layout-item padding="horizontal-small" size="6"></lightning-layout-item>
+                    
+                    <lightning-layout-item padding="horizontal-small" size="6">
+                    <lightning-output-field field-name="NumberSent"
+                        style="width:100%;margin-bottom:auto;padding-right: 10px;border-bottom-color: #FEE;"
+                        class="slds-has-divider--bottom slds-form-element_stacked">
+                        <lightning-button-icon data-fieldapiname="NumberSent" icon-name="utility:edit"
+                        alternative-text="Edit" title="Edit" variant="bare" size="medium" type="button"
+                        onclick={editRecord} style="opacity:.2;position: absolute;"></lightning-button-icon>
+                    </lightning-output-field>
+                    </lightning-layout-item>
+
+                    <lightning-layout-item padding="horizontal-small" size="6"></lightning-layout-item>
+                    
+                    <lightning-layout-item padding="horizontal-small" size="6">
+                    <lightning-output-field field-name="ParentId"
+                        style="width:100%;margin-bottom:auto;padding-right: 10px;border-bottom-color: #FEE;"
+                        class="slds-has-divider--bottom slds-form-element_stacked">
+                        <lightning-button-icon data-fieldapiname="ParentId" icon-name="utility:edit"
+                        alternative-text="Edit" title="Edit" variant="bare" size="medium" type="button"
+                        onclick={editRecord} style="opacity:.2;position: absolute;"></lightning-button-icon>
+                    </lightning-output-field>
+                    </lightning-layout-item>
+
+                    <lightning-layout-item padding="horizontal-small" size="6"></lightning-layout-item>
+                    
+                    <lightning-layout-item padding="horizontal-small" size="6">
+                    <lightning-output-field field-name="CreatedById"
+                        style="width:100%;margin-bottom:auto;padding-right: 10px;border-bottom-color: #FEE;"
+                        class="slds-has-divider--bottom slds-form-element_stacked">
+                        <lightning-button-icon data-fieldapiname="CreatedById" icon-name="utility:edit"
+                        alternative-text="Edit" title="Edit" variant="bare" size="medium" type="button"
+                        onclick={editRecord} style="opacity:.2;position: absolute;"></lightning-button-icon>
+                    </lightning-output-field>
+                    </lightning-layout-item>
+
+                    <lightning-layout-item padding="horizontal-small" size="6">
+                    <lightning-output-field field-name="LastModifiedById"
+                        style="width:100%;margin-bottom:auto;padding-right: 10px;border-bottom-color: #FEE;"
+                        class="slds-has-divider--bottom slds-form-element_stacked">
+                        <lightning-button-icon data-fieldapiname="LastModifiedById" icon-name="utility:edit"
+                        alternative-text="Edit" title="Edit" variant="bare" size="medium" type="button"
+                        onclick={editRecord} style="opacity:.2;position: absolute;"></lightning-button-icon>
+                    </lightning-output-field>
+                    </lightning-layout-item>
+
+                    <lightning-layout-item padding="horizontal-small" size="6">
+                    <lightning-output-field field-name="Description"
+                        style="width:100%;margin-bottom:auto;padding-right: 10px;border-bottom-color: #FEE;"
+                        class="slds-has-divider--bottom slds-form-element_stacked">
+                        <lightning-button-icon data-fieldapiname="Description" icon-name="utility:edit"
+                        alternative-text="Edit" title="Edit" variant="bare" size="medium" type="button"
+                        onclick={editRecord} style="opacity:.2;position: absolute;"></lightning-button-icon>
+                    </lightning-output-field>
+                    </lightning-layout-item>
+                    
+
+            </lightning-layout>
+
+        </div>
+    </lightning-record-view-form>
+
+</template>

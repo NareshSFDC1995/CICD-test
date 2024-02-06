@@ -1,0 +1,104 @@
+<template>
+    <lightning-record-edit-form object-api-name="Campaign" record-id={recordId} onsuccess={handleSuccess} onerror={handleError} density="comfy">
+        <div if:true={onsavewait} class="slds-spinner_inline spinner-padding">
+            <lightning-spinner alternative-text="Loading" variant="brand"
+                size="large"  data-text="Saving..." class="spinnerText">
+            </lightning-spinner>
+        </div>
+
+        <lightning-layout multiple-rows="true">
+            <lightning-layout-item size="6" padding="horizontal-small">
+                <lightning-input-field field-name="OwnerId"></lightning-input-field>
+            </lightning-layout-item>
+            <!--
+            <lightning-layout-item size="6" padding="horizontal-small">
+                <lightning-input-field field-name="NumberOfLeads"></lightning-input-field>
+            </lightning-layout-item> -->
+            <lightning-layout-item></lightning-layout-item>
+            <lightning-layout-item size="6" padding="horizontal-small">
+                <lightning-input-field field-name="Name"></lightning-input-field>
+            </lightning-layout-item>
+
+            <lightning-layout-item size="6" padding="horizontal-small">
+                <lightning-input-field field-name="NumberOfConvertedLeads"></lightning-input-field>
+            </lightning-layout-item>
+
+            <lightning-layout-item size="6" padding="horizontal-small">
+                <lightning-input-field field-name="IsActive"></lightning-input-field>
+            </lightning-layout-item>
+
+            <lightning-layout-item size="6" padding="horizontal-small">
+                <lightning-input-field field-name="NumberOfContacts"></lightning-input-field>
+            </lightning-layout-item>
+            <lightning-layout-item size="6" padding="horizontal-small">
+                <lightning-input-field field-name="Type"></lightning-input-field>
+            </lightning-layout-item>
+            <lightning-layout-item size="6" padding="horizontal-small">
+                <lightning-input-field field-name="NumberOfResponses"></lightning-input-field>
+            </lightning-layout-item>
+            <lightning-layout-item size="6" padding="horizontal-small">
+                <lightning-input-field field-name="Status"></lightning-input-field>
+            </lightning-layout-item>
+            <lightning-layout-item size="6" padding="horizontal-small">
+                <lightning-input-field field-name="NumberOfOpportunities"></lightning-input-field>
+            </lightning-layout-item>
+            <lightning-layout-item size="6" padding="horizontal-small">
+                <lightning-input-field field-name="StartDate"></lightning-input-field>
+            </lightning-layout-item>
+            <lightning-layout-item size="6" padding="horizontal-small">
+                <lightning-input-field field-name="NumberOfWonOpportunities"></lightning-input-field>
+            </lightning-layout-item>
+            <lightning-layout-item size="6" padding="horizontal-small">
+                <lightning-input-field field-name="EndDate"></lightning-input-field>
+            </lightning-layout-item>
+            <lightning-layout-item size="6" padding="horizontal-small">
+                <lightning-input-field field-name="AmountAllOpportunities"></lightning-input-field>
+            </lightning-layout-item>
+            <lightning-layout-item size="6" padding="horizontal-small">
+                <lightning-input-field field-name="ExpectedRevenue"></lightning-input-field>
+            </lightning-layout-item>
+            <lightning-layout-item size="6" padding="horizontal-small">
+                <lightning-input-field field-name="AmountWonOpportunities"></lightning-input-field>
+            </lightning-layout-item>
+            <lightning-layout-item size="6" padding="horizontal-small">
+                <lightning-input-field field-name="BudgetedCost"></lightning-input-field>
+            </lightning-layout-item>
+            <lightning-layout></lightning-layout>
+
+            <lightning-layout-item size="6" padding="horizontal-small">
+                <lightning-input-field field-name="ActualCost"></lightning-input-field>
+            </lightning-layout-item>
+            <lightning-layout-item></lightning-layout-item>
+            <lightning-layout-item size="6" padding="horizontal-small">
+                <lightning-input-field field-name="ExpectedResponse"></lightning-input-field>
+            </lightning-layout-item>
+            <lightning-layout-item></lightning-layout-item>
+            <lightning-layout-item size="6" padding="horizontal-small">
+                <lightning-input-field field-name="NumberSent"></lightning-input-field>
+            </lightning-layout-item>
+            <lightning-layout-item></lightning-layout-item>
+            <lightning-layout-item size="6" padding="horizontal-small">
+                <lightning-input-field field-name="ParentId"></lightning-input-field>
+            </lightning-layout-item>
+            <lightning-layout-item></lightning-layout-item>
+            <lightning-layout-item size="6" padding="horizontal-small">
+                <lightning-input-field field-name="CreatedById"></lightning-input-field>
+            </lightning-layout-item>
+            <lightning-layout-item size="6" padding="horizontal-small">
+                <lightning-input-field field-name="LastModifiedById"></lightning-input-field>
+            </lightning-layout-item>
+            <lightning-layout-item size="6" padding="horizontal-small">
+                <lightning-input-field field-name="Description"></lightning-input-field>
+            </lightning-layout-item>
+            
+        </lightning-layout>
+
+        <input type="submit" class="slds-hidden updatecamp" />
+
+    </lightning-record-edit-form>
+
+    <footer class="slds-modal__footer">
+        <button class="slds-button slds-button_neutral" onclick={handleCancel}>Cancel</button>
+        <button class="slds-button slds-button_brand" onclick={validateCustom}>Save</button>
+    </footer>
+</template>

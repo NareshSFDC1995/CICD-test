@@ -1,0 +1,23 @@
+<template>
+    <lightning-record-view-form object-api-name="Campaign" record-id={recordId}>
+        <lightning-layout multiple-rows="true">
+            <lightning-layout-item size="6" padding="horizontal-small">
+                <lightning-input-field field-name="Name"></lightning-input-field>
+
+            </lightning-layout-item>
+
+            <lightning-layout-item size="6" padding="horizontal-small">
+                <lightning-output-field field-name="Name"
+                style="width:100%;margin-bottom:auto;padding-right: 10px;border-bottom-color: #FEE;"
+                class="slds-has-divider--bottom slds-form-element_stacked">
+                <lightning-button-icon data-fieldapiname="Name" icon-name="utility:edit"
+                    alternative-text="Edit" title="Edit" variant="bare" size="medium" type="button"
+                    style="opacity:.2;position: absolute;"></lightning-button-icon>
+                </lightning-output-field>
+            </lightning-layout-item>
+
+        </lightning-layout>
+
+    </lightning-record-view-form>
+    
+</template>
