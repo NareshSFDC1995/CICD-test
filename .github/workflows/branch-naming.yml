@@ -3,7 +3,7 @@ name: Validate on PR Approval
 on:
   push:
     branches-ignore:
-            - master
+            - 'master'
         paths:
             - 'force-app/**'
 
