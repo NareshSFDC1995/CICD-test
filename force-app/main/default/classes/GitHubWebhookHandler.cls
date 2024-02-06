@@ -1,3 +1,3 @@
-global with sharing class GitHubWebhookHandler {
+public with sharing class GitHubWebhookHandler {
 
 }
